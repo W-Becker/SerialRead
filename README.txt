@@ -8,7 +8,7 @@ TO INSTALL
 2. Download and unzip SerialRead.
 3. In Chrome go to tools > extensions.
 4. Toggle Developer mode
-5. Click ìLoad unpacked extension...î and choose unzipped folder.
+5. Click ‚ÄúLoad unpacked extension...‚Äù and choose unzipped folder.
 
 Now the Chrome app can be used from the launch button or Chrome App Launcher.
 
@@ -34,6 +34,5 @@ TO USE APP
 7. When the test is finished, click "Stop."
 8. Enter the desired filename into the text box, and click "Save."
 9. Navigate to your test data folder, and click "Save" again.
-10. Click "Reset." This will relaunch the app to clear data from the previous reading and close the port.
-::::Step 10 must be done to properly close the serial port. If you forget this step, unplug the device, and restart the app.:::
+10. Click "Reset." This will relaunch the app to clear data from the previous reading and close the port. This step must be done to properly close the serial port. If you forget this step, unplug the device, and restart the app.
 11. Repeat steps 5 through 10 for each test, and close the app when finished.
