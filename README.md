@@ -8,7 +8,7 @@ TO INSTALL
 2. Download and unzip SerialRead.
 3. In Chrome go to tools > extensions.
 4. Toggle Developer mode
-5. Click “Load unpacked extension...” and choose unzipped folder.
+5. Click â€œLoad unpacked extension...â€ and choose unzipped folder.
 
 Now the Chrome app can be used from the launch button or Chrome App Launcher.
 
