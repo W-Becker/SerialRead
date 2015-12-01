@@ -48,8 +48,8 @@ void loop() {
       Serial.print(scaledZ); Serial.print(",");
       Serial.print(resultant);Serial.println("");
   
-  //delays 0.003 sec before next reading
-  delay(3);
+  //delays 0.005 sec before next reading
+  delay(5);
 }
 
 //function to map raw data to the range of accelerometer
