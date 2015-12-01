@@ -1,0 +1,72 @@
+/* style file for serialRead_GUI.html
+   author: Will Becker, Iowa State University
+   created for use by CrossOver SafeHelmet project
+   for ENGR 466 (Multidisciplinary Engineering Design) */
+
+/*
+ sets background color for main document
+*/
+body {
+	/* RGB values for Arduino color */
+	background-color: rgb(0,151,157);
+}
+
+/*
+ sets style for fieldset area (includes buttons, textarea, etc.)
+*/
+fieldset {
+	/* display style */
+    display: block;
+	/* centers fieldset */
+    margin: 0 auto;
+	/* padding for resizing
+	   buffer between border and inside objects */
+    padding-top: 1em;
+    padding-bottom: 2.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+	/* width, % of screen */
+	width: 35%;
+	/* rounds corners */
+	border-radius: 25px;
+	/* background color */
+	background: white;
+	/* small black border */
+    border: 2px solid black;
+}
+
+/*
+ sets style textarea
+*/
+textarea {
+	/* small black border on textarea displaying serial data */
+	border: 2px solid black;
+}
+
+/*
+ sets style for all buttons
+*/
+button {
+	/* rounds corners */
+	border-radius: 5px;
+	/* light gray background */
+	background: rgb(230,230,230);
+	/* small, hidden border */
+	border: 1px hidden;
+}
+
+/*
+ sets style for the header ("Arduino Serial Port")
+*/
+h1 {
+	/* changes font size */
+	font-size: 500%;
+}
+
+/*
+ sets style for the top line of buttons and text boxes
+*/
+#topdiv {
+	/* padding on bottom of line of buttons, etc. */
+	padding-bottom: 1em;
+}

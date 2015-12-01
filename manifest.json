@@ -1,0 +1,31 @@
+/* information for chrome app
+   author: Will Becker, Iowa State University
+   created for use by CrossOver SafeHelmet project
+   for ENGR 466 (Multidisciplinary Engineering Design) */
+{
+  
+  "name": "SerialRead",
+  "description": "Read Serial Arduino data. Created as part of the SafeHelmet project for Multidisciplinary Engineering Design",
+  "author": "Will Becker, Iowa State University",
+  "version": "1.0.0",
+  
+  //required, allows use of chrome.serial api
+  "permissions": ["serial"],
+  "app": {
+    "background": {
+	  //specifies background file
+      "scripts": ["src/background.js"]
+    }
+  },
+
+  //includes icons for app
+  "icons": { "16": "icons/16.png",
+             "48": "icons/48.png",
+            "128": "icons/128.png" },
+
+  "manifest_version": 2,
+  //allows offline usage
+  "offline_enabled": true,
+  "minimum_chrome_version": "33"
+
+}

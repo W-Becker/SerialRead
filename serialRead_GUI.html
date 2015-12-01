@@ -1,0 +1,48 @@
+<!-- GUI file for placing interface objects
+     author: Will Becker, Iowa State University
+     created for use by CrossOver SafeHelmet project
+     for ENGR 466 (Multidisciplinary Engineering Design) -->
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+    Arduino Serial Port
+</title>
+<!-- offline jquery file (for $ usage in .js files)
+     must appear before other .js files -->
+<script src="./src/jquery_v1.11.1.js"></script>
+<!-- file for functions other than reading (saving, refreshing) -->
+<script src="./src/serialRead_Functions.js"></script>
+<!-- file for reading from the serial port -->
+<script src="./src/serialRead_Read.js"></script>
+
+<!-- links style document -->
+<link rel="stylesheet" type="text/css" href="./src/serialRead_style.css">
+
+</head>
+
+<body>
+	
+	<h1 style="text-align: center">
+		Arduino Serial Port
+	</h1>
+	<fieldset id="field" style="text-align: center">
+	<!-- first line of objects -->
+	<div id="topdiv" style="text-align: center">Port: <input type="text" style="text-align: center" id="port" value="COM3" size="2">
+	Filename: <input type="text" id="filename" size="6">.csv
+	<button id="save">Save</button>
+	<button id="run">Run</button>
+	<button id="clear">Reset</button></div>
+	<!-- could add more features
+		- Graph
+		- etc.
+	-->
+	<div style="text-align: center"><textarea readonly id="data" rows="20" cols="50"></textarea></div>
+	<!-- error message -->
+	<p id="errormessage" style="text-align: center">Use your head! There's no device connected.</p>
+	<p style="text-align: center"><button id="reset">OK</button></p>
+	</fieldset>
+	
+</body>
+</html>
