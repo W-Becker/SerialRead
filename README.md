@@ -35,5 +35,5 @@ TO USE APP
 8. Enter the desired filename into the text box, and click "Save."
 9. Navigate to your test data folder, and click "Save" again.
 10. Click "Reset." This will relaunch the app to clear data from the previous reading and close the port.
-::::Step 10 must be done to properly close the serial port. If you forget this step, unplug the device, and restart the app.:::
+ ::::Step 10 must be done to properly close the serial port. If you forget this step, unplug the device, and restart the app.:::
 11. Repeat steps 5 through 10 for each test, and close the app when finished.
