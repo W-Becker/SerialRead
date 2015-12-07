@@ -22,12 +22,13 @@ $(document).ready(function() {
 		$("#reset").hide();
 	});
 	
-	//gets list of serial devices
+    //gets list of serial devices
     chrome.serial.getDevices(function(devices) {
         for (var i = 0; i < devices.length; i++) {
             console.log(devices[i].path);
 			deviceList[i] = devices[i];
         }
+        $("#port").val(deviceList[0].path);
     });
 
     //opens connection when run button is clicked
@@ -41,43 +42,43 @@ $(document).ready(function() {
 			
 			return;
 		}
-		//keeps track of clicks on run button
+	//keeps track of clicks on run button
         var clicks = $(this).data('clicks');
 		
-		//when 0 clicks (opens port and begins reading)
+	//when 0 clicks (opens port and begins reading)
         if (!clicks) {
-			//opens port according to what is in port text box
-			var port = "" + $('#port').val();
-			chrome.serial.connect(port, {bitrate: 57600}, function(info) {
-				connectionId = info.connectionId;
-				//changes run button text to Stop
-				$("#run").html("Stop");
-				console.log('Connection opened with id: ' + connectionId + ', Bitrate: ' + info.bitrate);
-				chrome.serial.onReceive.addListener(function(info) {
-					//if data is being read from port, it is added to textarea
-					if (info.data) {
-						//converts serial data to string
-						var str = String.fromCharCode.apply(null, new Uint8Array(info.data));
-						//appends data to textarea
-						$("#data").val($("#data").val() + str);
-					}
-				});
+		//opens port according to what is in port text box
+		var port = "" + $('#port').val();
+		chrome.serial.connect(port, {bitrate: 57600}, function(info) {
+			connectionId = info.connectionId;
+			//changes run button text to Stop
+			$("#run").html("Stop");
+			console.log('Connection opened with id: ' + connectionId + ', Bitrate: ' + info.bitrate);
+			chrome.serial.onReceive.addListener(function(info) {
+				//if data is being read from port, it is added to textarea
+				if (info.data) {
+					//converts serial data to string
+					var str = String.fromCharCode.apply(null, new Uint8Array(info.data));
+					//appends data to textarea
+					$("#data").val($("#data").val() + str);
+				}
 			});
-		//when 1 click (closes port)
+		});
+	//when 1 click (closes port)
         } else {
-			//flushes data in serial port
-            chrome.serial.flush(connectionId, function(result) {
-				//changes stop button text back to Run
-				$("#run").html("Run");
-				console.log('Connection with id: ' + connectionId + ' flushed.')
-				//closes serial connection
-				chrome.serial.disconnect(connectionId,function() {
-					console.log('Connection with id: ' + connectionId + ' closed');
-				});
+		//flushes data in serial port
+            	chrome.serial.flush(connectionId, function(result) {
+			//changes stop button text back to Run
+			$("#run").html("Run");
+			console.log('Connection with id: ' + connectionId + ' flushed.')
+			//closes serial connection
+			chrome.serial.disconnect(connectionId,function() {
+				console.log('Connection with id: ' + connectionId + ' closed');
 			});
+		});
         }
 		
-		//updates clicks tally
+	//updates clicks tally
         $(this).data("clicks", !clicks);
     });
 });
